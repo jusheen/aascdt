@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TextInput, TouchableOpacity, Text, StatusBar } from 'react-native';
 
-export default function LoginForm () {
+export default function LoginForm ({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar
@@ -27,7 +27,10 @@ export default function LoginForm () {
 
       />
 
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={() => navigation.navigate('Details')}
+      >
         <Text style={styles.buttonText}>LOGIN</Text>
       </TouchableOpacity>
     </View>
