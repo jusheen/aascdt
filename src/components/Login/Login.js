@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 import LoginForm from './LoginForm'
-export default function Login() {
+
+export default function Login({ navigation }) {
   return (
     <KeyboardAvoidingView behavior='padding' style={styles.container}>
       <View style={styles.container}>
@@ -13,12 +14,11 @@ export default function Login() {
           <Text style={styles.title}> #EatingisSocial</Text>
         </View>
         <View style={styles.formContainer}>
-          <LoginForm />
+          <LoginForm navigation={navigation}/>
         </View>
       </View>
     </KeyboardAvoidingView>
   );
-
 }
 
 const styles = StyleSheet.create({
