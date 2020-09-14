@@ -2,9 +2,22 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Button, Text, View, StyleSheet } from 'react-native';
 import Login from './src/components/Login/Login';
 import Cafeterias from './src/components/Cafeterias.js';
+
+
+
+function getHeaderTitle(route) {
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafeterias';
+  switch (routeName) {
+    case 'Cafeterias':
+      return 'Dining Halls';
+    case 'Profile':
+      return 'My profile';
+  }
+}
 
 const Stack = createStackNavigator();
 
@@ -28,20 +41,11 @@ const App = () => {
         <Stack.Screen
           name='Cafeterias'
           component={Cafeterias}
-          options={
-            {
-              headerTitle: 'Dining Halls',
-              headerLeft: null,
-              gesturesEnabled: false,
-              headerStyle: {
-                backgroundColor: '#FFF',
-              },
-              headerTintColor: '#000',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }
-          }
+          options={({ route }) => ({
+            headerTitle: getHeaderTitle(route),
+            headerLeft: null,
+            gesturesEnabled: false,
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
@@ -50,7 +54,20 @@ const App = () => {
 
 export default App
 
-
+// options={
+//   {
+//     headerTitle: 'Dining Halls',
+//     headerLeft: null,
+//     gesturesEnabled: false,
+//     headerStyle: {
+//       backgroundColor: '#FFF',
+//     },
+//     headerTintColor: '#000',
+//     headerTitleStyle: {
+//       fontWeight: 'bold',
+//     },
+//   }
+// }
 
 
 
