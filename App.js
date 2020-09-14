@@ -11,7 +11,7 @@ function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafeterias';
   switch (routeName) {
     case 'Cafeterias':
-      return 'Dining Halls';
+      return 'Home';
     case 'Profile':
       return 'My profile';
   }

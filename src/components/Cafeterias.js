@@ -42,6 +42,20 @@ const CafeteriasScreen = () => {
           </View>
         </Swiper>
       </View>
+
+      <View style={styles.cardsWrapper}>
+        <Text>Crossroads</Text>
+        <View style={styles.card}>
+          <View style={styles.cardImgWrapper}>
+            <Image
+              source={require('../images/crossroads.png')}
+              resizeMode='cover'
+              style={styles.cardImg}
+            />
+          </View>
+        </View>
+      </View>
+
     </View>
   )
 };
