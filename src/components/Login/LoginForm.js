@@ -29,7 +29,7 @@ export default function LoginForm ({ navigation }) {
 
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Cafeterias')}
       >
         <Text style={styles.buttonText}>LOGIN</Text>
       </TouchableOpacity>
