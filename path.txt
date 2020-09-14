@@ -1,1 +1,0 @@
-/Users/jusheen/.nvm/versions/node/v10.15.3/bin/react-native -> /Users/jusheen/.nvm/versions/node/v10.15.3/lib/node_modules/react-native-cli/index.js
