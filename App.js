@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Button, Text, View, StyleSheet } from 'react-native';
 import Login from './src/components/Login/Login';
-import Cafeterias from './src/components/Cafeterias.js';
+import Cafeterias from './src/screens/CafeteriasScreen.js';
 
 function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafeterias';
