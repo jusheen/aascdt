@@ -109,7 +109,7 @@ const CafeteriasScreen = () => {
   )
 };
 
-export default function Cafeterias() {
+export default function Cafeterias({ navigation }) {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Cafeterias" component={CafeteriasScreen} />

@@ -1,24 +1,48 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, StatusBar, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, StatusBar, ScrollView } from 'react-native';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
+
+
+const Stack = createStackNavigator();
+
+const CafeteriaCardComponent = ({ imagePath, name, description }) => {
+  const navigation = useNavigation();
+
+  return (
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Cafe3')}
+    >
+      <View style={styles.card}>
+        <View style={styles.cardImgWrapper}>
+          <Image
+            source={imagePath}
+            resizeMode="cover"
+            style={styles.cardImg}
+          />
+        </View>
+        <View style={styles.cardInfo}>
+          <Text style={styles.cardTitle}>{name}</Text>
+          <Text style={styles.cardDetails}>
+            {description}
+          </Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  )
+};
+
+
+
 
 export default function CafeteriaCard ({ imagePath, name, description }) {
   return (
-    <View style={styles.card}>
-      <View style={styles.cardImgWrapper}>
-        <Image
-          source={imagePath}
-          resizeMode="cover"
-          style={styles.cardImg}
-        />
-      </View>
-      <View style={styles.cardInfo}>
-        <Text style={styles.cardTitle}>{name}</Text>
-        <Text style={styles.cardDetails}>
-          {description}
-        </Text>
-      </View>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen
+        name=
+      />
+    </Stack.Navigator>
   )
 };
 
