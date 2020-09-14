@@ -28,7 +28,14 @@ const CafeteriasScreen = () => {
           </View>
           <View style={styles.slide}>
             <Image
-              source={require('../images/aascdt-banner.png')}
+              source={require('../images/founder.png')}
+              resizeMode='cover'
+              style={styles.sliderImage}
+            />
+          </View>
+          <View style={styles.slide}>
+            <Image
+              source={require('../images/bears_eating_together.jpg')}
               resizeMode='cover'
               style={styles.sliderImage}
             />
@@ -38,38 +45,6 @@ const CafeteriasScreen = () => {
     </View>
   )
 };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#ffdd59'
-//   },
-//   sliderContainer: {
-//     height: 200,
-//     width: '90%',
-//     marginTop: 10,
-//     justifyContent: 'center',
-//     alignSelf: 'center',
-//     borderRadius: 8,
-//   },
-
-//   wrapper: {},
-
-//   slide: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     backgroundColor: 'transparent',
-//     borderRadius: 8,
-//   },
-//   sliderImage: {
-//     height: '100%',
-//     width: '100%',
-//     alignSelf: 'center',
-//     borderRadius: 8,
-//   },
-// });
 
 export default function Cafeterias() {
   return (
@@ -104,8 +79,8 @@ const styles = StyleSheet.create({
   },
   sliderContainer: {
     height: 200,
-    width: '90%',
-    marginTop: 10,
+    width: '100%',
+    marginTop: 0,
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: 8,
@@ -123,7 +98,6 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     alignSelf: 'center',
-    borderRadius: 8,
   },
   categoryContainer: {
     flexDirection: 'row',
