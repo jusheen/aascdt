@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, StatusBar, ScrollView } from 'react-nati
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
 import ProfileScreen from './ProfileScreen';
 import CafeteriaCard from '../components/CafeteriaCard';
@@ -126,13 +127,32 @@ const CafeteriasScreen = () => {
       />
     </Stack.Navigator>
   )
-
 };
+
+function getHeaderTitle(route) {
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafeterias';
+  switch (routeName) {
+    case 'Cafeterias':
+      return 'Cafeterias';
+    case 'Profile':
+      return 'My profile';
+    case 'Cafe3':
+      return 'Cafe3';
+  }
+}
 
 export default function Cafeterias({ navigation }) {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Cafeterias" component={CafeteriasScreen} />
+      <Tab.Screen
+        name="Cafeterias"
+        component={CafeteriasScreen}
+        options={({ route }) => ({
+          headerTitle: getHeaderTitle(route),
+          headerLeft: null,
+          gesturesEnabled: false,
+        })}
+      />
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
