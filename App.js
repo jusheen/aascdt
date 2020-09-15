@@ -21,6 +21,14 @@ function getHeaderTitle(route) {
   }
 }
 
+function falseOrTrue(route) {
+  if (getHeaderTitle(route) === 'Profile') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -39,14 +47,14 @@ const App = () => {
             headerTitle: getHeaderTitle(route),
             headerLeft: null,
             headerMode: 'none',
-            headerShown: false,
-            gesturesEnabled: getHeaderTitle(route) === 'Home' ? true: false,
+            headerShown: falseOrTrue(route),
           })}
         />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
+// headerShown: getHeaderTitle(route) === 'Cafeterias' ? false : true,
 
 export default App
 
