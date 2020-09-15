@@ -126,6 +126,10 @@ const CafeteriasScreen = () => {
       <CafeStack.Screen
         name='Cafe 3'
         component={Cafe3Screen}
+        options={({ route }) => ({
+          headerLeft: null,
+          headerShown: false,
+        })}
       />
       <CafeStack.Screen
         name='International House'
