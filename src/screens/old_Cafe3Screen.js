@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Profile () {
+export default function Cafe3Screen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Profile Screen</Text>
+      <Text>Cafe 3 Screen</Text>
     </View>
   )
 };

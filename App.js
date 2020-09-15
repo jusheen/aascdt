@@ -5,15 +5,25 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Button, Text, View, StyleSheet } from 'react-native';
 import Login from './src/components/Login/Login';
-import Cafeterias from './src/components/Cafeterias.js';
+import Cafeterias from './src/screens/CafeteriasScreen.js';
 
 function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafeterias';
   switch (routeName) {
     case 'Cafeterias':
-      return 'Dining Halls';
+      return 'Home';
     case 'Profile':
       return 'My profile';
+    case 'Cafe 3':
+      return 'Cafe 3';
+  }
+}
+
+function falseOrTrue(route) {
+  if (getHeaderTitle(route) === 'Profile') {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -24,7 +34,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name='Home'
+          name='Login'
           component={Login}
           options={{ headerShown: false }}
         />
@@ -34,12 +44,16 @@ const App = () => {
           options={({ route }) => ({
             headerTitle: getHeaderTitle(route),
             headerLeft: null,
-            gesturesEnabled: false,
+            headerMode: 'none',
+            headerShown: falseOrTrue(route),
           })}
         />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
+// headerShown: getHeaderTitle(route) === 'Cafeterias' ? false : true,
 
 export default App
+
+// headerTitle: getHeaderTitle(route),

@@ -24,7 +24,6 @@ export default function LoginForm ({ navigation }) {
         secureTextEntry
         style={styles.input}
         ref={(input) => this.passwordInput = input}
-
       />
 
       <TouchableOpacity
