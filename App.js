@@ -14,8 +14,8 @@ function getHeaderTitle(route) {
       return 'Home';
     case 'Profile':
       return 'My profile';
-    case 'Cafe3':
-      return 'Cafe3';
+    case 'Cafe 3':
+      return 'Cafe 3';
   }
 }
 
@@ -36,7 +36,7 @@ const App = () => {
           options={({ route }) => ({
             headerTitle: getHeaderTitle(route),
             headerLeft: null,
-            gesturesEnabled: false,
+            gesturesEnabled: getHeaderTitle(route) === 'Home' ? true: false,
           })}
         />
       </Stack.Navigator>
@@ -45,3 +45,5 @@ const App = () => {
 }
 
 export default App
+
+// headerTitle: getHeaderTitle(route),

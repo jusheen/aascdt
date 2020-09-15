@@ -9,7 +9,7 @@ export default function CafeteriaCard ({ imagePath, name, description }) {
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Cafe3')}
+      onPress={() => navigation.navigate('Cafe 3')}
     >
       <View style={styles.card}>
         <View style={styles.cardImgWrapper}>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { View, Text, Image, StyleSheet, StatusBar, ScrollView } from 'react-native';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -9,9 +9,6 @@ import ProfileScreen from './ProfileScreen';
 import CafeteriaCard from '../components/CafeteriaCard';
 import Cafe3Screen from './Cafe3Screen';
 
-
-const Tab = createBottomTabNavigator();
-
 // image paths
 const CAFE1_IMG = require('../images/croads_2.jpg');
 const CAFE1_NAME = 'Crossroads';
@@ -19,7 +16,7 @@ const CAFE1_DESCRIPTION = 'Fan favorite.';
 
 const CAFE2_IMG = require('../images/cafe3.jpg');
 const CAFE2_NAME = 'Cafe 3';
-const CAFE2_DESCRIPTION = "The infamous and notorious. At least it's vegan.";
+const CAFE2_DESCRIPTION = "The infamous Cafe 3. At least it's vegan.";
 
 const CAFE3_IMG = require('../images/i-house.jpg');
 const CAFE3_NAME = 'International House';
@@ -110,47 +107,48 @@ const CafeteriasFeed = () => {
   )
 };
 
-const Stack = createStackNavigator();
+const CafeStack = createStackNavigator();
 
 const CafeteriasScreen = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
+    <CafeStack.Navigator>
+      <CafeStack.Screen
         name='CafeteriasFeed'
         component={CafeteriasFeed}
-        options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name='Cafe3'
+      <CafeStack.Screen
+        name='Cafe 3'
         component={Cafe3Screen}
-        options={{ headerShown: true }}
       />
-    </Stack.Navigator>
+    </CafeStack.Navigator>
   )
 };
 
 function getHeaderTitle(route) {
-  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafeterias';
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafe 3';
   switch (routeName) {
-    case 'Cafeterias':
-      return 'Cafeterias';
+    case 'CafeteriasFeed':
+      return 'Cafeteriass';
     case 'Profile':
       return 'My profile';
-    case 'Cafe3':
+    case 'Cafe 3':
       return 'Cafe3';
   }
 }
 
+// name={({route}) => (getFocusedRouteNameFromRoute(route) ?? 'Cafeterias')}
+const Tab = createBottomTabNavigator();
+
+
 export default function Cafeterias({ navigation }) {
+  const [CafeNavTabName, setCafeNavTabName] = useState('Cafeterias');
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Cafeterias"
+        name='Cafeterias'
         component={CafeteriasScreen}
         options={({ route }) => ({
           headerTitle: getHeaderTitle(route),
-          headerLeft: null,
-          gesturesEnabled: false,
         })}
       />
       <Tab.Screen
