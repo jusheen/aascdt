@@ -4,10 +4,7 @@ import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 
-
-const Stack = createStackNavigator();
-
-const CafeteriaCardComponent = ({ imagePath, name, description }) => {
+export default function CafeteriaCard ({ imagePath, name, description }) {
   const navigation = useNavigation();
 
   return (
@@ -30,19 +27,6 @@ const CafeteriaCardComponent = ({ imagePath, name, description }) => {
         </View>
       </View>
     </TouchableOpacity>
-  )
-};
-
-
-
-
-export default function CafeteriaCard ({ imagePath, name, description }) {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name=
-      />
-    </Stack.Navigator>
   )
 };
 

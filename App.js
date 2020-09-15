@@ -14,6 +14,8 @@ function getHeaderTitle(route) {
       return 'Home';
     case 'Profile':
       return 'My profile';
+    case 'Cafe3':
+      return 'Cafe3';
   }
 }
 

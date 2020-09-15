@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, StatusBar, ScrollView } from 'react-native';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-swiper';
 import ProfileScreen from './ProfileScreen';
 import CafeteriaCard from '../components/CafeteriaCard';
+import Cafe3Screen from './Cafe3Screen';
 
 
 const Tab = createBottomTabNavigator();
@@ -30,9 +32,7 @@ const CAFE5_IMG = require('../images/foothill.png');
 const CAFE5_NAME = 'Foothill';
 const CAFE5_DESCRIPTION = "They have couches here, that's pretty cool.";
 
-
-
-const CafeteriasScreen = () => {
+const CafeteriasFeed = () => {
   const theme = useTheme();
   return (
     <ScrollView>
@@ -107,6 +107,26 @@ const CafeteriasScreen = () => {
       </View>
     </ScrollView>
   )
+};
+
+const Stack = createStackNavigator();
+
+const CafeteriasScreen = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name='CafeteriasFeed'
+        component={CafeteriasFeed}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name='Cafe3'
+        component={Cafe3Screen}
+        options={{ headerShown: true }}
+      />
+    </Stack.Navigator>
+  )
+
 };
 
 export default function Cafeterias({ navigation }) {

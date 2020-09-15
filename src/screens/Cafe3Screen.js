@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Profile () {
+export default function Cafe3Screen() {
   return (
     <View style={styles.container}>
       <Text>Cafe 3 Screen</Text>
