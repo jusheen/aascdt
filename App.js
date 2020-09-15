@@ -6,8 +6,6 @@ import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Button, Text, View, StyleSheet } from 'react-native';
 import Login from './src/components/Login/Login';
 import Cafeterias from './src/screens/CafeteriasScreen.js';
-import { HomeTitleContext } from './src/HomeTitleContext';
-
 
 function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafeterias';
