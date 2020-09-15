@@ -65,7 +65,6 @@ const CafeteriasFeed = () => {
             </View>
           </Swiper>
         </View>
-
         <View style={styles.cardsWrapper}>
           <Text
             style={{
@@ -113,11 +112,30 @@ const CafeteriasScreen = () => {
   return (
     <CafeStack.Navigator>
       <CafeStack.Screen
-        name='CafeteriasFeed'
+        name='Home'
         component={CafeteriasFeed}
+        options={({ route }) => ({
+          headerLeft: null,
+        })}
+      />
+      <CafeStack.Screen
+        name='Crossroads'
+        component={Cafe3Screen}
       />
       <CafeStack.Screen
         name='Cafe 3'
+        component={Cafe3Screen}
+      />
+      <CafeStack.Screen
+        name='International House'
+        component={Cafe3Screen}
+      />
+      <CafeStack.Screen
+        name='Clark Kerr'
+        component={Cafe3Screen}
+      />
+      <CafeStack.Screen
+        name='Foothill'
         component={Cafe3Screen}
       />
     </CafeStack.Navigator>
@@ -125,7 +143,6 @@ const CafeteriasScreen = () => {
 };
 
 function getHeaderTitle(route) {
-  debugger
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafe 3';
   switch (routeName) {
     case 'CafeteriasFeed':
@@ -137,9 +154,7 @@ function getHeaderTitle(route) {
   }
 }
 
-// name={({route}) => (getFocusedRouteNameFromRoute(route) ?? 'Cafeterias')}
 const Tab = createBottomTabNavigator();
-
 
 export default function Cafeterias({ navigation }) {
 
