@@ -108,6 +108,7 @@ const CafeteriasFeed = () => {
 
 const CafeStack = createStackNavigator();
 
+// TODO: refactor so I only need one of the cafe screens, and inject them with dynamic data
 const CafeteriasScreen = () => {
   return (
     <CafeStack.Navigator>
