@@ -12,10 +12,46 @@ const posts = [
   },
   {
     id: '2',
-    name: 'Nilay',
-    text: "Down, meet at unit 3?",
+    name: 'Nilay Neeranjun',
+    text: "Down, meet at unit 3? I live in Priestley.",
     avatar: require('../images/nilay.jpg'),
     timestamp: '10:30am'
+  },
+  {
+    id: '3',
+    name: 'Ju Sheen Kim',
+    text: "Me too! Sounds like a plan. I'll be by the benches disguised in a blue cap and white shirt.",
+    avatar: require('../images/jusheen.jpg'),
+    timestamp: '10:31am'
+  },
+  {
+    id: '4',
+    name: 'Raghav Jalan',
+    text: "Mind if I join?",
+    avatar: require('../images/ragz.jpg'),
+    timestamp: '11:47am'
+  },
+  {
+    id: '5',
+    name: 'Nilay Neeranjun',
+    text: "Slide bro",
+    avatar: require('../images/nilay.jpg'),
+    timestamp: '11:47am'
+  },
+  {
+    id: '6',
+    name: 'Youssef Essanaa',
+    text: "How's the food today?",
+    avatar: require('../images/youss.jpg'),
+    timestamp: '12:33pm'
+  },
+  {
+    id: '7',
+    name: 'Raghav Jalan',
+    text: "It's lit",
+    avatar: require('../images/ragz.jpg'),
+    timestamp: '12:56pm',
+    image: require('../images/cafe3_food.png')
   }
 ]
 
@@ -28,11 +64,13 @@ export default class Cafe3Screen extends React.Component {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
             <View>
               <Text style={styles.name}>{post.name}</Text>
-    <Text style={styles.timestamp}>{post.timestamp}</Text>
+              <Text style={styles.timestamp}>{post.timestamp}</Text>
             </View>
           </View>
-    <Text style={styles.posts}>{post.text}</Text>
+          <Text style={styles.posts}>{post.text}</Text>
+          <Image source={post.image} style={post.id === '7' ? styles.postImage : null} resizeMode='cover' />
         </View>
+
       </View>
     )
   }
@@ -109,5 +147,11 @@ const styles = StyleSheet.create({
     marginTop: 15,
     fontSize: 14,
     color: '#838899'
+  },
+  postImage: {
+    width: undefined,
+    height: 150,
+    borderRadius: 5,
+    marginVertical: 16
   }
 });
