@@ -125,6 +125,7 @@ const CafeteriasScreen = () => {
 };
 
 function getHeaderTitle(route) {
+  debugger
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Cafe 3';
   switch (routeName) {
     case 'CafeteriasFeed':
@@ -141,6 +142,7 @@ const Tab = createBottomTabNavigator();
 
 
 export default function Cafeterias({ navigation }) {
+
   const [CafeNavTabName, setCafeNavTabName] = useState('Cafeterias');
   return (
     <Tab.Navigator>
