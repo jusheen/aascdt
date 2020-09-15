@@ -30,6 +30,14 @@ const CAFE5_IMG = require('../images/foothill.png');
 const CAFE5_NAME = 'Foothill';
 const CAFE5_DESCRIPTION = "They have couches here, that's pretty cool.";
 
+const CAFE6_IMG = require('../images/patbrowns.jpg');
+const CAFE6_NAME = "Pat Brown's";
+const CAFE6_DESCRIPTION = "Good coffee and fancy bagel buns.";
+
+const CAFE7_IMG = require('../images/gbc.jpg');
+const CAFE7_NAME = "Golden Bear Cafe";
+const CAFE7_DESCRIPTION = "For when you're in a rush.";
+
 const CafeteriasFeed = () => {
   const theme = useTheme();
   return (
@@ -100,6 +108,16 @@ const CafeteriasFeed = () => {
             name={CAFE5_NAME}
             description={CAFE5_DESCRIPTION}
           />
+          <CafeteriaCard
+            imagePath={CAFE6_IMG}
+            name={CAFE6_NAME}
+            description={CAFE6_DESCRIPTION}
+          />
+          <CafeteriaCard
+            imagePath={CAFE7_IMG}
+            name={CAFE7_NAME}
+            description={CAFE7_DESCRIPTION}
+          />
         </View>
       </View>
     </ScrollView>
@@ -141,6 +159,10 @@ const CafeteriasScreen = () => {
       />
       <CafeStack.Screen
         name='Foothill'
+        component={Cafe3Screen}
+      />
+      <CafeStack.Screen
+        name='Pat Browns'
         component={Cafe3Screen}
       />
     </CafeStack.Navigator>
