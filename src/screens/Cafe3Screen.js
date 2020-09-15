@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, FlatList, Image } from 'react-native';
 
 // const posts = [" hi, ", " his"];
 const posts = [
@@ -29,7 +29,7 @@ const posts = [
     name: 'Raghav Jalan',
     text: "Mind if I join?",
     avatar: require('../images/ragz.jpg'),
-    timestamp: '11:47am'
+    timestamp: '11:47am',
   },
   {
     id: '5',
@@ -52,26 +52,34 @@ const posts = [
     avatar: require('../images/ragz.jpg'),
     timestamp: '12:56pm',
     image: require('../images/cafe3_food.png')
+  },
+  {
+    id: '8',
+    name: 'Nick Tokunaga',
+    text: "That looks so good...who's down to go tonight after my bio lecture at 6:30?",
+    avatar: require('../images/toku.jpg'),
+    timestamp: '4:13pm'
   }
 ]
 
 export default class Cafe3Screen extends React.Component {
   renderPost = (post) => {
     return (
-      <View style={styles.feedItem}>
-        <Image source={post.avatar} style={styles.avatar}/>
-        <View style={{ flex: 1 }}>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <View>
-              <Text style={styles.name}>{post.name}</Text>
-              <Text style={styles.timestamp}>{post.timestamp}</Text>
+      <ScrollView>
+        <View style={styles.feedItem}>
+          <Image source={post.avatar} style={styles.avatar}/>
+          <View style={{ flex: 1 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+              <View>
+                <Text style={styles.name}>{post.name}</Text>
+                <Text style={styles.timestamp}>{post.timestamp}</Text>
+              </View>
             </View>
+            <Text style={styles.posts}>{post.text}</Text>
+            <Image source={post.image} style={post.id === '7' ? styles.postImage : null} resizeMode='cover' />
           </View>
-          <Text style={styles.posts}>{post.text}</Text>
-          <Image source={post.image} style={post.id === '7' ? styles.postImage : null} resizeMode='cover' />
         </View>
-
-      </View>
+      </ScrollView>
     )
   }
 
