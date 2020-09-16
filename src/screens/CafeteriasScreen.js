@@ -66,7 +66,7 @@ const CafeteriasFeed = () => {
             </View>
             <View style={styles.slide}>
               <Image
-                source={require('../images/bears_eating_together.jpg')}
+                source={require('../images/gbc_walkers.jpg')}
                 resizeMode='cover'
                 style={styles.sliderImage}
               />
