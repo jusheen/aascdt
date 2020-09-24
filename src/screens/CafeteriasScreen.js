@@ -7,7 +7,7 @@ import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
 import ProfileScreen from './ProfileScreen';
 import CafeteriaCard from '../components/CafeteriaCard';
-import Cafe3Screen from './Cafe3Screen';
+import DiningHallScreen from './DiningHallScreen';
 
 // image paths
 const CAFE1_IMG = require('../images/croads_2.jpg');
@@ -139,31 +139,31 @@ const CafeteriasScreen = () => {
       />
       <CafeStack.Screen
         name='Crossroads'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
         name='Cafe 3'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
         options={({ route }) => ({
-          headerLeft: null,
-          headerShown: false,
+          // headerLeft: null,
+          // headerShown: false,
         })}
       />
       <CafeStack.Screen
         name='International House'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
         name='Clark Kerr'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
         name='Foothill'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
         name='Pat Browns'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
     </CafeStack.Navigator>
   )
