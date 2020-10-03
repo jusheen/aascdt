@@ -123,10 +123,10 @@ const CafeteriasFeed = () => {
     </ScrollView>
   )
 };
+// TODO: refactor so I only need one of the cafe screens, and inject them with dynamic data
 
 const CafeStack = createStackNavigator();
 
-// TODO: refactor so I only need one of the cafe screens, and inject them with dynamic data
 const CafeteriasScreen = () => {
   return (
     <CafeStack.Navigator>
@@ -140,30 +140,51 @@ const CafeteriasScreen = () => {
       <CafeStack.Screen
         name='Crossroads'
         component={DiningHallScreen}
+        options={({ route }) => ({
+          headerBackTitleVisible: false,
+        })}
       />
       <CafeStack.Screen
         name='Cafe 3'
         component={DiningHallScreen}
         options={({ route }) => ({
-          // headerLeft: null,
-          // headerShown: false,
+          headerBackTitleVisible: false,
         })}
       />
       <CafeStack.Screen
         name='International House'
         component={DiningHallScreen}
+        options={({ route }) => ({
+          headerBackTitleVisible: false,
+        })}
       />
       <CafeStack.Screen
         name='Clark Kerr'
         component={DiningHallScreen}
+        options={({ route }) => ({
+          headerBackTitleVisible: false,
+        })}
       />
       <CafeStack.Screen
         name='Foothill'
         component={DiningHallScreen}
+        options={({ route }) => ({
+          headerBackTitleVisible: false,
+        })}
       />
       <CafeStack.Screen
-        name='Pat Browns'
+        name="Pat Brown's"
         component={DiningHallScreen}
+        options={({ route }) => ({
+          headerBackTitleVisible: false,
+        })}
+      />
+      <CafeStack.Screen
+        name="Golden Bear Cafe"
+        component={DiningHallScreen}
+        options={({ route }) => ({
+          headerBackTitleVisible: false,
+        })}
       />
     </CafeStack.Navigator>
   )
