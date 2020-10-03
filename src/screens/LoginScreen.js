@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
-import LoginForm from './LoginForm'
+import LoginForm from '../components/Login/LoginForm'
 
-export default function Login({ navigation }) {
+export default function LoginScreen({ navigation }) {
   return (
     <KeyboardAvoidingView behavior='padding' style={styles.container}>
       <View style={styles.container}>
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
-            source={require('../../images/calbear_logo.png')}
+            source={require('../images/calbear_logo.png')}
           />
           <Text style={styles.title}> #EatingisSocial</Text>
         </View>

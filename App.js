@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Button, Text, View, StyleSheet } from 'react-native';
-import Login from './src/components/Login/Login';
+import LoginScreen from './src/screens/LoginScreen';
 import Cafeterias from './src/screens/CafeteriasScreen.js';
 
 function getHeaderTitle(route) {
@@ -34,8 +34,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name='Login'
-          component={Login}
+          name='Login Screen'
+          component={LoginScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -52,8 +52,5 @@ const App = () => {
     </NavigationContainer>
   )
 }
-// headerShown: getHeaderTitle(route) === 'Cafeterias' ? false : true,
 
 export default App
-
-// headerTitle: getHeaderTitle(route),
