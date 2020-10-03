@@ -35,11 +35,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name='Onboarding'
           component={OnboardingScreen}
           options={{ headerShown: false }}
-        />
+        /> */}
         <Stack.Screen
           name='Login Screen'
           component={LoginScreen}
