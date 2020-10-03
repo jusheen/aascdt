@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Button, Text, View, StyleSheet } from 'react-native';
+
+import OnboardingScreen from './src/screens/OnboardingScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import Cafeterias from './src/screens/CafeteriasScreen.js';
 
@@ -33,6 +35,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name='Onboarding'
+          component={OnboardingScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name='Login Screen'
           component={LoginScreen}

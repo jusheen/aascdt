@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-const OnboardingSCreen = ({navigation}) => {
+const OnboardingScreen = ({navigation}) => {
   return (
-    <View style={stlyes.container}>
+    <View style={styles.container}>
       <Text>Onboarding Screen</Text>
       <Button
         title="Click Here"
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.navigate("Login Screen")}
       />
     </View>
   )
