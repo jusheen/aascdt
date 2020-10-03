@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, FlatList, Image } from 'react-native';
 import data from '../data/data';
 
-export default function Cafe3Screen(props) {
+export default function DiningHallScreen(props) {
 
   // display and format each post by user
   const renderPost = (post) => {
@@ -27,9 +27,9 @@ export default function Cafe3Screen(props) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <Text style={styles.headerTitle}>Cafe 3 Feed</Text>
-      </View>
+      </View> */}
 
       <FlatList
         style={styles.feed}

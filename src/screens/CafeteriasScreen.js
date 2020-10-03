@@ -7,7 +7,7 @@ import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
 import ProfileScreen from './ProfileScreen';
 import CafeteriaCard from '../components/CafeteriaCard';
-import Cafe3Screen from './Cafe3Screen';
+import DiningHallScreen from './DiningHallScreen';
 
 // image paths
 const CAFE1_IMG = require('../images/croads_2.jpg');
@@ -66,7 +66,7 @@ const CafeteriasFeed = () => {
             </View>
             <View style={styles.slide}>
               <Image
-                source={require('../images/bears_eating_together.jpg')}
+                source={require('../images/gbc_walkers.jpg')}
                 resizeMode='cover'
                 style={styles.sliderImage}
               />
@@ -123,13 +123,15 @@ const CafeteriasFeed = () => {
     </ScrollView>
   )
 };
+// TODO: refactor so I only need one of the cafe screens, and inject them with dynamic data
 
 const CafeStack = createStackNavigator();
 
-// TODO: refactor so I only need one of the cafe screens, and inject them with dynamic data
 const CafeteriasScreen = () => {
   return (
-    <CafeStack.Navigator>
+    <CafeStack.Navigator screenOptions={{
+      headerBackTitleVisible: false,
+    }}>
       <CafeStack.Screen
         name='Home'
         component={CafeteriasFeed}
@@ -139,31 +141,31 @@ const CafeteriasScreen = () => {
       />
       <CafeStack.Screen
         name='Crossroads'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
         name='Cafe 3'
-        component={Cafe3Screen}
-        options={({ route }) => ({
-          headerLeft: null,
-          headerShown: false,
-        })}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
         name='International House'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
         name='Clark Kerr'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
         name='Foothill'
-        component={Cafe3Screen}
+        component={DiningHallScreen}
       />
       <CafeStack.Screen
-        name='Pat Browns'
-        component={Cafe3Screen}
+        name="Pat Brown's"
+        component={DiningHallScreen}
+      />
+      <CafeStack.Screen
+        name="Golden Bear Cafe"
+        component={DiningHallScreen}
       />
     </CafeStack.Navigator>
   )
